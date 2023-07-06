@@ -1,0 +1,45 @@
+allowVolumeExpansion: false
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  annotations:
+    storageclass.kubernetes.io/is-default-class: 'true'
+  creationTimestamp: '2023-07-03T10:18:11Z'
+  managedFields:
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:allowVolumeExpansion: {}
+        f:parameters:
+          .: {}
+          f:encrypted: {}
+          f:fsType: {}
+          f:iopsPerGB: {}
+          f:type: {}
+        f:provisioner: {}
+        f:reclaimPolicy: {}
+        f:volumeBindingMode: {}
+      manager: agent
+      operation: Update
+      time: '2023-07-03T10:18:11Z'
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:storageclass.kubernetes.io/is-default-class: {}
+      manager: kubectl-patch
+      operation: Update
+      time: '2023-07-03T10:24:48Z'
+  name: gp3
+  resourceVersion: '10304'
+  uid: 1ad126ee-06c9-4a88-a223-d36fa83df341
+parameters:
+  encrypted: 'true'
+  fsType: ext4
+  iopsPerGB: '3000'
+  type: gp3
+provisioner: kubernetes.io/aws-ebs
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
